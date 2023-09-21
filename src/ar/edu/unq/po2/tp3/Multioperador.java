@@ -22,10 +22,16 @@ public class Multioperador {
 	}
 	
 	public int multiplicarTodosLosNumeros() {
-		int sumaTotal = 0;
-		for (int numero : numeros) {
+		int sumaTotal = 1;
+	    for (int numero : numeros) {
 			sumaTotal = sumaTotal * numero;
 		}
 		return sumaTotal;
 	}
+	
+	public void addNumbre(int n) {
+		numeros.add(n);
+	}
+	
+	
 }
