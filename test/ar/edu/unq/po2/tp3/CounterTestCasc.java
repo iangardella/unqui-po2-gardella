@@ -7,7 +7,9 @@ import org.junit.jupiter.api.Test;
 
 class CounterTestCasc {
 	private Counter counter;
-	 
+	
+	private Counter counter1;
+	
 	@BeforeEach
 	public void setUp() throws Exception {
 	
@@ -24,6 +26,19 @@ class CounterTestCasc {
 	counter.addNumber(4);
 	}
 
+	
+	@BeforeEach
+	public void setUp1() throws Exception {
+		counter1 = new Counter();
+		
+		counter1.addNumber(1234);
+        counter1.addNumber(2468);
+        counter1.addNumber(135);
+        counter1.addNumber(-8246);
+        counter1.addNumber(9098);
+
+		
+	}
 	@Test
 	void testOddNumbers() {
 		int amount = counter.getOddOcurrence();
@@ -45,4 +60,10 @@ class CounterTestCasc {
 		assertEquals(amount, 1);
 	}
 	
+	@Test 
+	void testFindNumberWithMostEvenDigits() {
+		int numberEvenDigitsMax = counter1.findNumberWithMaxEvensNumbers();
+		
+		assertEquals(numberEvenDigitsMax, 2468);
+	}
 }

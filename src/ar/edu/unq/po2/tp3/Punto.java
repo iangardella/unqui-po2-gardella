@@ -5,8 +5,13 @@ public class Punto {
 	private float x;
 	private float y;
 	
+	public Punto() {
+		this.setX(0);
+		this.setY(0);
+	}
+	
+	
 	public Punto(float x, float y) {
-		super();
 		this.setXY(x, y);
 	}
 	
@@ -30,5 +35,17 @@ public class Punto {
 		this.y = y;
 	}
 	
+	public void moverPunto(float x, float y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public Punto sumaDePuntos(Punto p1, Punto p2) {
+		float newX = p1.getX() + p2.getX();
+		float newY = p1.getY() + p2.getY();
+		
+		Punto puntoNuevo = new Punto(newX, newY);
+		return puntoNuevo;
+ 	}
 	
 }

@@ -42,4 +42,33 @@ public class Counter {
 		}
 		return counter;
 	}
+	
+	public int findNumberWithMaxEvensNumbers() {
+		int maxEvenDigits = 0;
+		int resultNumber = 0;
+		for(int n: listNumbers) {
+			int evenDigitsCount = countEvenDigits(n);
+			
+			if (evenDigitsCount > maxEvenDigits) {
+				maxEvenDigits = evenDigitsCount;
+				resultNumber = n;
+			}
+		}
+		return resultNumber;
+	}
+
+	private int countEvenDigits(int n) {
+		int count = 0;
+		
+		n = Math.abs(n);
+		
+		while(n > 0) {
+			int digit = n % 10;
+			if (digit % 2 == 0) {
+				count++;
+			}
+			n /= 10;
+		}
+		return count;
+	}
 }
