@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>35</x>
+      <y>245</y>
+      <w>196</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Empresa&gt;&gt;
+--
+- nombreEmpresa : String 
+- cuit : String
+--
+_ new(String, String):void _
++ getEmpresa() : String 
++ getcuit() : String  
++ montoTotalSueldosNetos(): Float
++ montoTotalSueldosBrutos(): Float 
++ montoTotalRetenciones(): Float
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>315</y>
+      <w>98</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+0..n</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>308</x>
+      <y>245</y>
+      <w>259</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>/&lt;&lt;Empleado&gt;&gt;/
+--
+- nombreEmpleado : String 
+- direccion : String
+- estadoCivil : String 
+- fechaNacimiento : Date
+- sueldoBasico : Float
+--
++ getEdad() : Int 
+/+ sueldoBruto() : Float/
+/+ retenciones() : Float/
+/+ detallesRetenciones(): String/
++ sueldoNeto() : Float 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>427</x>
+      <y>469</y>
+      <w>259</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;EmpleadoTemporal&gt;&gt;
+--
+- fechaFin : Date
+- cantHorasExtras : Int
+--
+_+ new(String, String, String, Date, Float, Date):void _
++ getCantHorasExtras(): Int
++ asignacionHorasExtras(): Float
++ retencionObraSocial(): Float
++ aportesJubilatorios(): Float 
++ sueldoBruto(): Float 
++ retenciones(): Float 
++ detallesRetenciones(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>112</x>
+      <y>469</y>
+      <w>252</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;EmpleadoPermanente&gt;&gt;
+--
+- cantHijos: Int
+- fechaIngreso : Date
+--
+_+ new(String, String, String, Date, Float, Date):void _
++ cantHijos(): Int 
++ antiguedad(): Int
++ conyugue?() : Bool
++ asignacionPorHijo() : Float
++ asignacionConyugue(): Float 
++ asignacionAntiguedad() : Float
++ sueldoBruto(): Float 
++ retenciones(): Float 
++ detallesRetenciones(): String
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>427</x>
+      <y>385</y>
+      <w>21</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>28</x>
+      <y>70</y>
+      <w>203</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;ReciboDeHaberes&gt;&gt;
+--
+- nombreEmpleado: String 
+- direccion: String
+- fechaEmision: Date
+- sueldoBruto: Float
+- sueldoNeto: Float
+- desgloceDeConceptos: String
+--
+_new(String, String, Date, Float, Float, String)_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>714</x>
+      <y>469</y>
+      <w>252</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;EmpleadoContratado&gt;&gt;
+--
+- numContrato: Int
+- medioDePago: String
+
+--
+_+ new(String, String, String, Date, Float, String):void _
++ sueldoBruto(): Float 
++ retenciones(): Float 
++ detallesRetenciones(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>147</x>
+      <y>196</y>
+      <w>35</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>238</x>
+      <y>427</y>
+      <w>602</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;840.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>238</x>
+      <y>427</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>427</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>819</x>
+      <y>427</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
